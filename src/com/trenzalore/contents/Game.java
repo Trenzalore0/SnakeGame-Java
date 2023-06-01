@@ -32,6 +32,7 @@ public class Game  extends JFrame {
 				Thread.sleep(Config.GAME_FPS);
 			} catch (Exception e) {}
 		}
+		control.playBemtiviDeath();
 	}
 	
 	private void setPresets() {
@@ -76,6 +77,7 @@ public class Game  extends JFrame {
 			Game.apple.randomNewLocation();
 			Snake.addBody(Game.snake);
 			Game.points.addPoint();
+			control.playBemtivi();
 		}
 		
 		if (Snake.hasBody) {

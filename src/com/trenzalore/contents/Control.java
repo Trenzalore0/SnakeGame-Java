@@ -2,16 +2,46 @@ package com.trenzalore.contents;
 
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.File;
+
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+
+import com.trenzalore.contents.audios.AudioBemtivi;
+import com.trenzalore.contents.audios.AudioBemtiviDeath;
 
 public class Control implements KeyListener {
 	
 	private Snake snake;
 	
 	private Pause pause;
-
+	
+	private File eat = new AudioBemtivi();
+	
+	private File death = new AudioBemtiviDeath();
+	
 	public Control(Snake snake, Pause pause) {
 		this.snake = snake;
 		this.pause = pause;
+	}
+	
+	private void play (File audio) {
+		try {
+			AudioInputStream audioStream = AudioSystem.getAudioInputStream(audio);
+			Clip clip = AudioSystem.getClip();
+			clip.open(audioStream);
+			clip.start();
+		} catch(Exception e) {
+		}
+	}
+	
+	public void playBemtivi() {
+		play(eat);
+	}
+	
+	public void playBemtiviDeath() {
+		play(death);
 	}
 	
 	private void validate(Integer x, Integer y) {
