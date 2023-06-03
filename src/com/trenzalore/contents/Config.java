@@ -2,13 +2,10 @@ package com.trenzalore.contents;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Toolkit;
 
 public interface Config {
 	
 	// ----------------- game  -----------------
-	
-	final public Toolkit SCREEN = Toolkit.getDefaultToolkit();
 
 	final public Integer GAME_FPS = 50;
 	
