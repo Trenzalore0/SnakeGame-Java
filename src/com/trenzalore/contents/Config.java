@@ -18,10 +18,6 @@ public interface Config {
 	
 	final public String GAME_TITLE = "Snake Game";
 	
-	final public Integer GAME_lOCATION_X = (int) Config.SCREEN.getScreenSize().getWidth() / 2 - Config.GAME_WIDTH / 2;
-	
-	final public Integer GAME_LOCATION_Y = (int) Config.SCREEN.getScreenSize().getHeight() / 2 - Config.GAME_HEIGHT / 2;
-	
 	final public Integer FONT_SIZE = 50;
 
 	// ----------------- pause label  -----------------
